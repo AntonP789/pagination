@@ -12,13 +12,7 @@
                 'post_type' => 'statue',
                 'posts_per_page' => 12,
                 'paged' => $paged,
-                'meta_query' => array( // if on search page
-                    array(
-                        'key' => 'product_tags',
-                        'value' => get_search_query(),
-                        'compare' => 'LIKE'
-                    )
-                ),
+                's' => get_search_query(), // if on search page
             );
 
             $query = new WP_Query($args);
